@@ -7,7 +7,11 @@ ro.vendor.ril.svdo         u:object_r:vendor_radio_prop:s0
 # Motorola
 persist.vendor.nfc.        u:object_r:vendor_mot_nfc_prop:s0
 ro.vendor.hw.              u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.mot.cust_md5     u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.mot.gki.         u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.mot.iccid        u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.bootreason       u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.manufacturedate  u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.product.device   u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.product.display  u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.product.hardware.sku.variant          u:object_r:vendor_mot_hw_prop:s0
