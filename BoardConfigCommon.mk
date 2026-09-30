@@ -26,6 +26,10 @@ TARGET_NO_BOOTLOADER := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
+# Use the in-tree libqsap_sdk module instead of the make-module in
+# hardware/motorola/softap/sdk (kati cannot merge the two)
+TARGET_USES_LOCAL_QSAP := true
+
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_KERNEL_BASE := 0x00000000
@@ -48,7 +52,7 @@ TARGET_KERNEL_SOURCE ?= kernel/motorola/sm6375
 TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_CLANG_VERSION := r530567
 BOARD_USES_VENDOR_DLKMIMAGE := true
-TARGET_KERNEL_CONFIG := vendor/holi-qgki_defconfig
+TARGET_KERNEL_CONFIG := vendor/holi-qgki_defconfig vendor/ext_config/sedona.config
 
 # A/B
 AB_OTA_UPDATER := true
@@ -163,7 +167,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/fsg:/fsg
 
 # SELinux
-include device/qcom/sepolicy_vndr/SEPolicy.mk
+include device/qcom/sepolicy_vndr/legacy-um/SEPolicy.mk
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
